@@ -1,0 +1,28 @@
+Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+ 
+
+Example 1:
+
+Input: s = "leetcode"
+Output: 0
+
+MyCode:
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        l=[]
+        d={}
+        for i in s:
+            l.append(i)
+        for i in l:
+            if i in d:
+                continue
+            else:
+                d[i]=l.count(i)
+        for i in d:
+            if d[i]==1:
+                return l.index(i)
+            else:
+                continue
+        return -1
