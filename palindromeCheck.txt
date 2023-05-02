@@ -1,0 +1,46 @@
+125. Valid Palindrome
+
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters
+and removing all non-alphanumeric characters, it reads the same forward and backward.
+Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+ 
+Example 1:
+
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+Good Solution:
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        s = [w if w.isalnum() else '' for w in s]
+        s = ''.join(s)
+        print(s)
+        return s == s[::-1]
+
+My Solution:
+
+    class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s=s.lower()
+        l=[]
+        for i in s:
+            if i.isalnum():
+                l.append(i)
+        finalString="".join(l)
+        l=l[::-1]
+        reverseString="".join(l)
+        print(reverseString)
+        if finalString==reverseString:
+            return True
+        else:
+            return False
+
+Optimal Solution:
+
+    
